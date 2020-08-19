@@ -1,0 +1,15 @@
+
+.App {
+  background-color:#23262c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.Container {
+display: flex;
+max-height: calc(100vh - 2rem);
+min-height: 95vh;
+}
+
