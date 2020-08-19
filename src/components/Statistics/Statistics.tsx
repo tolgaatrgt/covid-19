@@ -5,6 +5,10 @@ type Props = {
     data?: Country
 }
 export const Statistics: React.FC<Props> = ({data}) => {
+    
+   const seperator  = (number?: number) => {
+        return number?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
 
     return (
     
@@ -13,22 +17,22 @@ export const Statistics: React.FC<Props> = ({data}) => {
          <BoardUnit>{data?.title}</BoardUnit>
          <StyledBoardUnit>
              <UnitTitle>Total Cases</UnitTitle>
-             {data?.total_cases}</StyledBoardUnit>
+             {seperator(data?.total_cases)}</StyledBoardUnit>
          <StyledBoardUnit >
          <UnitTitle>Total Deaths</UnitTitle>
-             {data?.total_deaths}
+             {seperator(data?.total_deaths)}
              </StyledBoardUnit>
          <StyledBoardUnit>
          <UnitTitle>Total New Cases Today</UnitTitle>
-             {data?.total_new_cases_today}
+             {seperator(data?.total_new_cases_today)}
              </StyledBoardUnit>
          <StyledBoardUnit>
          <UnitTitle>Total New Deaths Today</UnitTitle>
-             {data?.total_new_deaths_today}
+             {seperator(data?.total_new_deaths_today)}
              </StyledBoardUnit>
          <StyledBoardUnit>
          <UnitTitle green>Total Recovered</UnitTitle>
-             {data?.total_recovered}
+             {seperator(data?.total_recovered)}
              </StyledBoardUnit>
      </BoardWrap>
     </Wrap>

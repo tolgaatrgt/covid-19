@@ -7,5 +7,5 @@ background-color: #27496d;
 display: flex;
 width: 100%;
 min-height: 3rem;
-
+font-family: serif;
 `

@@ -5,6 +5,7 @@ export const ListItem = styled.div`
 display: flex;
 padding: 2% 4%;
 font-size: 1.25rem;
+font-family: monospace;
 border-bottom: solid 1px gray;
 cursor: pointer;
 :hover {
