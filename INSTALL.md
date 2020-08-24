@@ -23,7 +23,7 @@ Get the project into your local environment by applying the following commands b
     $ npm install
 
 
-## Run Project
+## Run 
 
 Go to project folder and run the command below.
 
