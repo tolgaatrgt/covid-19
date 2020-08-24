@@ -28,4 +28,6 @@ Get the project into your local environment by applying the following commands b
 Go to project folder and run the command below.
 
     $ npm start
+   Development server runs at;  
+   `localhost:3000`  
 
