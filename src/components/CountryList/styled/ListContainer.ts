@@ -1,22 +1,23 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 type Props = {
-  isVisible: boolean
-}
+  isVisible: boolean;
+};
 
-export const ListContainer = styled.div<Props> (({isVisible}) =>`
-display:${isVisible ? `flex` : `none`};
+export const ListContainer = styled.div<Props>(
+  ({ isVisible }) => `
+display:${isVisible ? `inline-block` : `none`};
 flex-direction:column;
-width: 20vh;
-height: calc(100vh -1rem);
+width:15%;
 overflow-y: scroll;
 overflow-x: hidden;
+background-color: #27496d47;
 ::-webkit-scrollbar {
-    width: 7px;
-    background: #474747;
+    width: 0.438rem;
 }
 ::-webkit-scrollbar-thumb {
-  background: #919191;
-  border-radius: 4px;
+  background: #5f5f5f;
+  border-radius: 0.25rem;
 }
-`)
+`
+);

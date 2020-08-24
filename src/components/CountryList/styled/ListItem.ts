@@ -1,15 +1,20 @@
-import styled from 'styled-components'
-
+import styled from "styled-components";
 
 export const ListItem = styled.div`
-display: flex;
-padding: 2% 4%;
-font-size: 1.25rem;
-font-family: monospace;
-border-bottom: solid 1px gray;
-cursor: pointer;
-:hover {
+  display: flex;
+  padding: 2% 5%;
+  font-size: 1.25rem;
+  font-family: monospace;
+  border: solid 0.063rem #27496d;
+  color: #27415d;
+  background-color: #dae0e7;
+  cursor: pointer;
+  border-radius: 0.125rem;
+  margin: 0.094rem 0.313rem 0.094rem 0.313rem;
+  :hover {
+    background-color: #27496d7a;
+    color: white;
     transform: scale(1.05);
-    background-color: #2c3038;
+    border-color: black;
   }
-`
+`;

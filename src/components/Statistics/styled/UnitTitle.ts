@@ -1,15 +1,18 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 type Props = {
-    green?: boolean
-}
-export const UnitTitle = styled.div<Props>( ({green}) => `
+  green?: boolean;
+};
+export const UnitTitle = styled.div<Props>(
+  ({ green }) => `
 
 display: inline-block;
-flex-direction: row;
 text-align: center;
 justify-content:center;
 width: 100%;
-border-bottom: solid 1px gray;
-color:${green ? `#12c712` : `red`};
-`)
+font-size: 1.25rem;
+border-bottom: solid 0.063rem gray;
+color:${green ? `#1d4e1d` : `#510000`};
+background-color: ${green ? `#00800047` : `#ff000047`}
+`
+);

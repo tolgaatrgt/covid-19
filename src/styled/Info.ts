@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-export const Wrap = styled.div`
+export const Info = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
 `;

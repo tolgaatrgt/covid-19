@@ -1,83 +1,57 @@
-import React from 'react';
-import Header from './components/Header'
-import Panel from './pages/Panel'
-import './App.css';
-import data from './data.json'
-export type Each = {
-  name: string,
-  id: number
-}
-
-export type Country = {
-code: string
-ourid: number
-source: string
-title: string
-total_active_cases: number
-total_cases: number
-total_deaths: number
-total_new_cases_today: number
-total_new_deaths_today: number
-total_recovered: number
-total_serious_cases: number
-total_unresolved: number
-}
-
+import React from "react";
+import { COUNTRY_TOTALS } from "./constants";
+import Header from "./components/Header";
+import Panel from "./components/Panel";
+import { Country, Each } from "./types";
+import { AppContainer, InnerContainer, Please } from "./styled";
+import "./App.css";
+import CountryList from "./components/CountryList";
 
 function App() {
-const [countries,setCountries] = React.useState<Country[]>([])
-const [item,setItem] = React.useState<Country>()
-const[selected,setSelected] = React.useState(0)
-let copy = [...countries]
-React.useEffect(() => {
-  fetch(`https://api.thevirustracker.com/free-api?countryTotals=ALL`)
-.then(response => response.json())
-.then(data => {Object.values(data['countryitems'][0]).map((item: any) => {
-    copy.push(item)
-})
-setCountries(copy)
-})
-.catch(console.error);
-},[])
+  const [countries, setCountries] = React.useState<Country[]>([]);
+  const [item, setItem] = React.useState<Country>();
+  React.useEffect(() => {
+    fetch(COUNTRY_TOTALS)
+      .then((response) => response.json())
+      .then((data) => {
+        setCountries(Object.values(data["countryitems"][0]));
+      })
+      .catch(console.error);
+  }, []);
 
-/* React.useEffect(() => {
-  Object.values(data['countryitems'][0]).map((item: any) => {
-  copy.push(item)
-})
-setCountries(copy)
-},[])  */
+  const List: Each[] = React.useMemo(
+    () =>
+      countries.map((country) => {
+        return {
+          name: country.title,
+          id: country.ourid,
+        };
+      }),
+    [countries]
+  );
 
-const List: Each[] = React.useMemo(
-  () => 
-  countries.map((country) => {
-return {
-  name: country.title ,
-  id: country.ourid
-}
-  })
-,[countries])
-
-const changeSelected = (id: number) => {
-setSelected(id)
-}
-
-
-React.useEffect(() => {
-  countries.forEach((item) => {
-    if(item.ourid === selected){
-    setItem(item)
-    }
-  })
-  
-},[selected])
+  const changeSelected = (id: number) => {
+    const selection = countries.filter((item) => item.ourid === id);
+    setItem(selection[0]);
+  };
 
   return (
-      <div className="App">
+    <AppContainer>
       <Header />
-      <div className='Container'>
-      <Panel isGet = {Boolean(countries.length)} List={List} changeSelected={changeSelected} data={item} isSelect={Boolean(item)} /> 
-      </div>
-      </div>
+      <InnerContainer>
+        <CountryList
+          isVisible={Boolean(countries.length)}
+          countries={List}
+          onClick={changeSelected}
+        />
+        {item && (
+          <Panel data={item} isSelect={Boolean(item)} code={item.code} />
+        )}
+        <Please isVisible={Boolean(countries.length) && !Boolean(item)}>
+          Please select a country for statistics.
+        </Please>
+      </InnerContainer>
+    </AppContainer>
   );
 }
 
