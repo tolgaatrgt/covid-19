@@ -5,7 +5,7 @@
 
 ### Node
 
-Install [Node](http://nodejs.org/) and run the following command for make sure.
+Install [Node](http://nodejs.org/) (also include npm ) and run the following command for make sure.
 
     $ node --version
     v10.19.0
