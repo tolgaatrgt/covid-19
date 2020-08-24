@@ -31,7 +31,7 @@ export const DailyCases: React.FC<Props> = ({ countryCode, data }) => {
     return avgs;
   };
   const chartData = SMA(get60Days(countryCode, data), 7).map((item, i) => ({
-    name: `Week ${i + 1}`,
+    name: `Period ${i + 1}`,
     Avarage: item,
   }));
   const renderLineChart = Boolean(chartData.length) ? (
