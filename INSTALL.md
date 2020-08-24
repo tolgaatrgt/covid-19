@@ -1,4 +1,4 @@
-# COVID-19 Statistics & Charts 
+# covid-19
 
 ## Requirements
 
