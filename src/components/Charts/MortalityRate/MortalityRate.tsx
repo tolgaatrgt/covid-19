@@ -1,8 +1,8 @@
 import React from "react";
 import { CountryWithDate } from "../../../types";
-import { get60Days } from "../../utils";
+import { get60Days } from "../../../utils";
 
-import { ChartTitle, Daily } from "../DailyCases/styled";
+import { ChartTitle, Daily } from "../styled";
 import { BarChart, Bar, Tooltip, CartesianGrid, XAxis, YAxis } from "recharts";
 
 type Props = {

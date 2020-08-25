@@ -29,7 +29,6 @@ function App() {
       }),
     [countries]
   );
-
   const changeSelected = (id: number) => {
     const selection = countries.filter((item) => item.ourid === id);
     setItem(selection[0]);

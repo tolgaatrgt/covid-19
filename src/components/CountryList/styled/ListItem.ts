@@ -4,6 +4,7 @@ export const ListItem = styled.div`
   display: flex;
   padding: 2% 5%;
   font-size: 1.25rem;
+  transition: 0.1s;
   font-family: monospace;
   border: solid 0.063rem #27496d;
   color: #27415d;

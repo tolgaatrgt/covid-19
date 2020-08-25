@@ -1,4 +1,4 @@
-import { CountryWithDate } from "../types";
+import { CountryWithDate } from "./types";
 
 export const get60Days = (code: string, data: CountryWithDate[]) => {
   const now = new Date();

@@ -12,11 +12,15 @@ export const CountryList: React.FC<Props> = ({
   isVisible,
 }) => {
   const renderList = (array: Each[]) =>
-    array.map((item, i) => (
-      <ListItem onClick={() => onClick(item.id)} key={i}>
-        {item.name}
-      </ListItem>
-    ));
+    array.map(
+      (item, i) =>
+        item.id && (
+          <ListItem onClick={() => onClick(item.id)} key={item.name}>
+            {item.name}
+          </ListItem>
+        )
+    );
+
   return (
     <ListContainer isVisible={isVisible}>{renderList(countries)}</ListContainer>
   );

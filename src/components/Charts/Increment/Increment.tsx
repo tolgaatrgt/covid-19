@@ -1,7 +1,7 @@
 import React from "react";
 import { CountryWithDate } from "../../../types";
-import { get60Days } from "../../utils";
-import { ChartTitle, Daily } from "../DailyCases/styled";
+import { get60Days } from "../../../utils";
+import { ChartTitle, Daily } from "../styled";
 import {
   LineChart,
   Line,

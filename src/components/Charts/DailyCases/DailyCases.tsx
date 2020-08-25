@@ -1,6 +1,6 @@
 import React from "react";
 import { CountryWithDate } from "../../../types";
-import { get60Days } from "../../utils";
+import { get60Days } from "../../../utils";
 import {
   LineChart,
   Line,
@@ -9,7 +9,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { Daily, ChartTitle } from "./styled";
+import { Daily, ChartTitle } from "../styled";
 
 export type Props = {
   countryCode: string;
