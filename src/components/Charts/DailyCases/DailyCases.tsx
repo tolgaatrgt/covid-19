@@ -93,8 +93,8 @@ export const DailyCases: React.FC<Props> = ({
         <TooltipContainer>
           <TooltipTitle>{payload[0].payload.name}</TooltipTitle>
           <TooltipContent>
-            Avarage of daily cases, {code}: {payload[0].payload[code]},{" "}
-            {compare && `${compare}: ${payload[0].payload[compare]}`}
+            Avarage of daily cases; {code}: {payload[0].payload[code]}
+            {compare && `, ${compare}: ${payload[0].payload[compare]}`}
           </TooltipContent>
         </TooltipContainer>
       );
