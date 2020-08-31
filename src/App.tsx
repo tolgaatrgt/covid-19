@@ -2,10 +2,10 @@ import React from "react";
 import { COUNTRY_TOTALS } from "./constants";
 import Header from "./components/Header";
 import Panel from "./components/Panel";
+import CountryList from "./components/CountryList";
 import { Country, Each } from "./types";
 import { AppContainer, InnerContainer, Please } from "./styled";
 import "./App.css";
-import CountryList from "./components/CountryList";
 
 function App() {
   const [countries, setCountries] = React.useState<Country[]>([]);
@@ -25,15 +25,16 @@ function App() {
         return {
           name: country.title,
           id: country.ourid,
+          code: country.code,
         };
       }),
     [countries]
   );
-  const changeSelected = (id: number) => {
-    const selection = countries.filter((item) => item.ourid === id);
+
+  const changeSelected = (code: string) => {
+    const selection = countries.filter((item) => item.code === code);
     setItem(selection[0]);
   };
-
   return (
     <AppContainer>
       <Header />
@@ -44,7 +45,13 @@ function App() {
           onClick={changeSelected}
         />
         {item && (
-          <Panel data={item} isSelect={Boolean(item)} code={item.code} />
+          <Panel
+            countries={countries}
+            data={item}
+            isSelect={Boolean(item)}
+            code={item.code}
+            onWidgetItem={changeSelected}
+          />
         )}
         <Please isVisible={Boolean(countries.length) && !Boolean(item)}>
           Please select a country for statistics.

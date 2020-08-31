@@ -1,14 +1,11 @@
 import React from "react";
 import { Wrap, BoardWrap, BoardUnit, UnitTitle, NameUnit } from "./styled";
 import { Country } from "../../types";
+import { seperator } from "../../utils";
 type Props = {
   data: Country;
 };
 export const Statistics: React.FC<Props> = ({ data }) => {
-  const seperator = (number?: number) => {
-    return number?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  };
-
   return (
     <Wrap>
       <BoardWrap>

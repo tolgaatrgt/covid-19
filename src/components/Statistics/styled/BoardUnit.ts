@@ -27,4 +27,6 @@ export const NameUnit = styled(BoardUnit)`
   background-color: #9cb7d4ba;
   padding: 0.313rem 0.625rem;
   justify-content: center;
+  background-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.5) 80%);
+}
 `;

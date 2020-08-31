@@ -8,7 +8,7 @@ export const ListContainer = styled.div<Props>(
   ({ isVisible }) => `
 display:${isVisible ? `inline-block` : `none`};
 flex-direction:column;
-width:15%;
+max-width: 250px;
 overflow-y: scroll;
 overflow-x: hidden;
 background-color: #27496d47;
@@ -18,6 +18,9 @@ background-color: #27496d47;
 ::-webkit-scrollbar-thumb {
   background: #5f5f5f;
   border-radius: 0.25rem;
+  :hover {
+    background: #2b4b6e;
+  }
 }
 `
 );

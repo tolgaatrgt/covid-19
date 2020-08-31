@@ -25,6 +25,13 @@ background-color: ${Tab === `Mortality` ? `#3a76b0` : `#8badcd9e`};
 export const I = styled(D)<Props>(
   ({ Tab }) => `
   background-color: ${Tab === `Increment` ? `#3a76b0` : `#8badcd9e`};
+  border-radius: 0;
+`
+);
+export const T = styled(M)<Props>(
+  ({ Tab }) => `
+  background-color: ${Tab === `TopTen` ? `#3a76b0` : `#8badcd9e`};
   border-radius: 0 0.5rem 0.5rem 0;
+
 `
 );

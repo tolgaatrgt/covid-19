@@ -1,9 +1,10 @@
 import React from "react";
 import { ListContainer, ListItem } from "./styled";
 import { Each } from "../../types";
+
 type Props = {
   countries: Each[];
-  onClick: (arg: number) => void;
+  onClick: (code: string) => void;
   isVisible: boolean;
 };
 export const CountryList: React.FC<Props> = ({
@@ -15,7 +16,7 @@ export const CountryList: React.FC<Props> = ({
     array.map(
       (item, i) =>
         item.id && (
-          <ListItem onClick={() => onClick(item.id)} key={item.name}>
+          <ListItem onClick={() => onClick(item.code)} key={item.name}>
             {item.name}
           </ListItem>
         )
